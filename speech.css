@@ -1,0 +1,27 @@
+.recorder{
+	border: 1px solid black;
+	width: 320px;
+	height: 100px;
+	text-align: center;
+	padding-top: 50px;
+}
+#saidwords{
+	width: 320px;
+	height: 100px;
+}
+#volumeBox{
+	width: 320px;
+	height: 100px;
+}
+#volumeBar{
+	width:200px;
+	height: 10px;
+	border: 1px solid black;
+	position: relative;
+	margin: 0 auto;
+}
+#voiceVolume{
+	width: 0px;
+	height: 10px;
+	background: green;
+}

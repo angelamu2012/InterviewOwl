@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pitch volume detection in Speech Recognition - JavaScript</title>
+	<link rel="stylesheet" href="./speech.css">
+</head>
+
+<body>
+	<a href = "./results.html" > RESULTS </a>
+	<div class='recorder'>
+   		<input type="button" id="but_start" value='Start Recording' onclick='startSpeech();'>
+   		<input type="button" id="but_stop" value='Stop Recording' onclick='stopSpeech();'>
+
+   		<br><br>
+   		<span id='status'>Recording not started.</span>
+
+   		<!-- Volume bar -->
+   		<div id='volumeBar'><div id='voiceVolume' ></div> </div>
+
+	</div>
+
+	<br>
+	Said Words -<br>
+	<textarea id='saidwords'></textarea>
+	
+	<br>
+
+	<p id ='insights'></p>
+
+
+	<!-- Script -->
+	<script type='text/javascript' src='jquery-3.3.1.min.js'></script>
+	<script type='text/javascript' src='volume-meter.js'></script>
+	<script src="./scripts.js"></script>
+
+	<script type='text/javascript'>
+
+	</script>
+</body>
+</html>

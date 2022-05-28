@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Speech Analysis</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <ul class="display-container">
+    <li class="note-display" id = "fillerWords" data-note="7.50">
+      <div class="circle">
+        <svg width="84" height="84" class="circle__svg">
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+        </svg>
+
+        <div class="percent">
+          <span class="percent__int">0.</span>
+          <span class="percent__dec">00</span>
+        </div>
+      </div>
+
+      <span class="label">Filler Words</span>
+    </li>
+
+    <li class="note-display" id = "pauses" data-note="2.42">
+      <div class="circle">
+        <svg width="84" height="84" class="circle__svg">
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+        </svg>
+
+        <div class="percent">
+          <span class="percent__int">0.</span>
+          <span class="percent__dec">00</span>
+        </div>
+      </div>
+
+      <span class="label">Pauses in Speech</span>
+    </li>
+
+    <li class="note-display" id = "volumeCir" data-note="2.42">
+      <div class="circle">
+        <svg width="84" height="84" class="circle__svg">
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+          <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+        </svg>
+
+        <div class="percent">
+          <span class="percent__int">0.</span>
+          <span class="percent__dec">00</span>
+        </div>
+      </div>
+
+      <span class="label">Volume</span>
+    </li>
+
+
+  </ul>
+  
+	<div class="block">
+		<p id = "insightsPara"></p>
+	</div>
+
+  <script type='text/javascript' src='jquery-3.3.1.min.js'></script>
+  <script type='text/javascript' src='volume-meter.js'></script>
+  <script type='text/javascript'>
+
+  setResultValues();
+  
+  function setResultValues()
+  {
+	var vol = localStorage.getItem("volume");
+	var circ1 = document.getElementById('volumeCir');
+	circ1.setAttribute('data-note', vol);
+			console.log("vol " + vol);
+
+	var fillerCount = localStorage.getItem("fillerCount")+".0";
+		console.log("fillerCount " + fillerCount);
+
+	var circ2 = document.getElementById('fillerWords');
+	circ2.setAttribute('data-note', fillerCount);
+	
+	var pauseCount = localStorage.getItem("pauseCount")+".0";
+		console.log("pauseCount " + pauseCount);
+
+	var circ3 = document.getElementById('pauses');
+	circ3.setAttribute('data-note', "20.0");
+	
+	document.getElementById('insightsPara').innerHTML = localStorage.getItem("insightsPara");
+	/*if (vol == "0.0")
+	{
+		
+	}
+	else if (vol == "2.5")
+	{
+		circ.setAttribute('data-note', "2.5");
+	}
+	else if (vol == "5.0")
+	{
+		circ.setAttribute('data-note', "5");
+	}
+	else if (vol == "7.5")
+	{
+		circ.setAttribute('data-note', "7.5");
+	}
+	else
+	{
+		circ.setAttribute('data-note', "10.0");
+	}*/
+  }
+
+
+  </script>
+      <script src="./scripts.js"></script>
+
+</body>
+</html>
